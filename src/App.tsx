@@ -1,14 +1,15 @@
 import React from 'react';
-import './App.css';
+import './Apps.scss';
 import Users from "./components/Users/Users";
 import Form from "./components/Form/Form"
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-      <div>
-        <Form/>
+      <div className={'mainBlock'}>
         <Users/>
+          <Form/>
       </div>
   );
 }

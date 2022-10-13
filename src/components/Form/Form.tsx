@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {useSearchParams} from "react-router-dom";
 
+import './Form.scss'
 
 const Form = () => {
 
-    const nationality = ["ALL", "AU", "BR", "CA", "CH", "DE", "DK", "ES", "FI", "FR", "GB", "IE", "IR", "NO", "NL", "NZ", "TR", "US"]
+    const nationality = ["AU", "BR", "CA", "CH", "DE", "DK", "ES", "FI", "FR", "GB", "IE", "IR", "NO", "NL", "NZ", "TR", "US"]
     const gender = ["all", "male", "female"]
     const [nationalityState, setNationalityState] = useState<string[] | any>([])
     const uniqueNat = [...new Set(nationalityState)]
@@ -21,29 +22,32 @@ const Form = () => {
         }
     }
 
+    const inputHandler = (e:any) => {
+        if (e.target.checked === true){
+            setNationalityState([...nationalityState, e.target.value.toLowerCase()])
+        }else {
+            setNationalityState(uniqueNat.filter(nat => nat !== e.target.value.toLowerCase()))
+        }
+        console.log(nationalityState)
+
+    }
+
     return (
         <div className={'form'}>
             <form onSubmit={onSubmit}>
                 <div className={'gender'}>
-                    <p>gender</p>
-                    <select name={'gender'}>
+                    <p>Gender</p>
+                    <select name={'gender'} className="form-select" aria-label="Default select example">
                         {gender.map((value, index) => <option key={index} value={value}>{value} </option>)}
                     </select>
                 </div>
                 <div className={'nationality'}>
-                    <p>nationality</p>
-                    <select name={'nat'}
-                            onChange={(e) => {
-                                if (e.target.value === 'ALL') {
-                                    setNationalityState([])
-                                } else
-                                    setNationalityState([...nationalityState, e.target.value.toLowerCase()])
-                            }}
-                            multiple>
-                        {nationality.map((value, index) => <option key={index} value={value}>{value}</option>)}
-                    </select>
+                    <p>Nationality</p>
+                    <div>
+                        {nationality.map((nat, index) => <div key={index}><input onChange={inputHandler} value={nat} type={"checkbox"} />{nat}</div>)}
+                    </div>
                 </div>
-                <button>Apply filters</button>
+                <button className="btn btn-primary">Apply filters</button>
             </form>
         </div>
     );

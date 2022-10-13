@@ -1,10 +1,10 @@
-
 import React, {FC, useEffect, useState} from 'react';
-
 import {useSearchParams} from "react-router-dom";
+
 import {userService} from "../../service/userService";
 import {IUser} from "../../interfaces/userInterface";
 import User from "../User/User";
+import './Users.scss'
 
 
 const Users:FC = () => {

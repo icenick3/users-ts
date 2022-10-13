@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.mainBlock {
+  width: 1800px;
+  margin: 40px auto 0 auto;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .mainBlock {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainBlock {
+  width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+.usersBlock {
+  justify-content: center;
+  width: 1500px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+/*# sourceMappingURL=Users.css.map */
