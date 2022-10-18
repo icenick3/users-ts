@@ -1,4 +1,4 @@
-import {IUser} from "./userInterface";
+import { IUser } from './userInterface';
 
 export interface IResponse {
     info: object;
