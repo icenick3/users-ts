@@ -14,6 +14,7 @@ const Users:FC = () => {
     const genderParameter:string|null = searchParams.get('gender')
     const nationalityParameter:string|null = searchParams.get('nat')
 
+    u
     useEffect(()=> {
 
         (async ()=> {
