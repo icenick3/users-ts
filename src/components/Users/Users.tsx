@@ -13,6 +13,8 @@ const Users:FC = () => {
     const [users, setUsers] = useState<IUser[]>([])
     const genderParameter:string|null = searchParams.get('gender')
     const nationalityParameter:string|null = searchParams.get('nat')
+const a = 1
+const a = 2
 
     useEffect(()=> {
 
